@@ -9,37 +9,6 @@ import pickle
 # import joblib
 # model = joblib.load(r"./notebook/model.sav")
 # Load the model using pickle
-with open('customer_churn_prediction_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-#Import python scripts
-# from preprocessing import preprocess
-# from sklearn.preprocessing import LabelEncoder
-#
-#
-# def preprocess(data, experiment_name):
-#     # Handle missing values
-#     data = data.fillna(0)
-#
-#     # Encode categorical features
-#     categorical_cols = data.select_dtypes(include='object').columns
-#     for col in categorical_cols:
-#         le = LabelEncoder()
-#         data[col] = le.fit_transform(data[col])
-#
-#     # Scale numerical features
-#     numeric_cols = data.select_dtypes(include=['int', 'float']).columns
-#     for col in numeric_cols:
-#         data[col] = (data[col] - data[col].min()) / (data[col].max() - data[col].min())
-#
-#     # Perform experiment-specific preprocessing
-#     if experiment_name == 'Online':
-#         # Add additional preprocessing steps for the 'Online' experiment
-#         pass
-#     elif experiment_name == 'Offline':
-#         # Add additional preprocessing steps for the 'Offline' experiment
-#         pass
-#
-#     return data
 
 def main():
     #Setting Application title
@@ -143,8 +112,9 @@ def main():
 
 
         if st.button('Predict'):
-            prediction = model.predict(features_df)
-            st.markdown("vnfjgfg")
+            # prediction = model.predict(features_df)
+            prediction = 0
+            st.markdown("Prediction is")
             st.markdown(prediction)
             if prediction == 1:
                 st.warning('Yes, the customer will terminate the service.')
@@ -165,9 +135,10 @@ def main():
             if st.button('Predict'):
                 #Get batch prediction
                 # prediction = model.predict(preprocess_df)
-                # prediction_df = pd.DataFrame(prediction, columns=["Predictions"])
-                # prediction_df = prediction_df.replace({1:'Yes, the customer will terminate the service.',
-                #                                     0:'No, the customer is happy with Telco Services.'})
+                prediction = 0
+                prediction_df = pd.DataFrame(prediction, columns=["Predictions"])
+                prediction_df = prediction_df.replace({1:'Yes, the customer will terminate the service.',
+                                                    0:'No, the customer is happy with Telco Services.'})
 
                 st.markdown("<h3></h3>", unsafe_allow_html=True)
                 st.subheader('Prediction')
