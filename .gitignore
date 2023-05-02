@@ -1,3 +1,5 @@
 venv
 *.log
 .idea
+churn_prediction.pkl
+churn_prediction_model.pkl
