@@ -1,9 +1,5 @@
 streamlit
 pandas
 numpy
-pickle
 sklearn
-matplotlib
 pycaret
-PIL
-joblib
